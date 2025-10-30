@@ -5,15 +5,13 @@
   <title>Graeme Smith</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="Analyst, researcher, journalist, consultant. Rome, Italy." />
-  <!-- Open Graph / Twitter cards -->
   <meta property="og:title" content="Graeme Smith" />
   <meta property="og:description" content="Analyst, researcher, journalist, consultant." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://graemesmith.com/" />
   <style>
-    /* Base layout: quiet, typographic, generous whitespace */
     :root {
-      --bg: #ffffff;
+      --bg: #f5f3ed; /* beige background */
       --fg: #111111;
       --muted: #555555;
       --link: #0d0d0d;
@@ -86,7 +84,6 @@
       font-size: 0.925rem;
       color: var(--muted);
     }
-    /* Small screens: reduce top space */
     @media (max-width: 520px) {
       .wrap { padding-top: 5rem; }
     }
@@ -95,7 +92,6 @@
 <body>
   <main class="wrap">
     <header>
-      <!-- Optional nav; add/remove items as needed -->
       <nav aria-label="Site">
         <a href="/" aria-current="page">Home</a>
         <a href="Graeme-Smith-CV.pdf">CV</a>
@@ -109,7 +105,7 @@
     <div class="links" aria-label="Key links">
       <a href="Graeme-Smith-CV.pdf">Download CV (PDF)</a>
       <span>—</span>
-      <a href="https://www.linkedin.com/in/graeme-smith" rel="me">LinkedIn</a>
+      <a href="https://www.linkedin.com/in/smithkabul/" rel="me">LinkedIn</a>
       <span>—</span>
       <a href="https://x.com/" rel="me">X</a>
       <span>—</span>
@@ -122,7 +118,6 @@
   </main>
 
   <script>
-    // tiny nicety: current year
     document.getElementById('y').textContent = new Date().getFullYear();
   </script>
 </body>
