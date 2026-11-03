@@ -4,9 +4,9 @@
   <meta charset="utf-8" />
   <title>Graeme Smith</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Graeme Smith is a journalist, author and analyst based in Rome. Selected public-interest reporting and research on conflict and international affairs." />
+  <meta name="description" content="Graeme Smith is a journalist and author based in Rome. Public-interest research with a focus on conflict and international affairs." />
   <meta property="og:title" content="Graeme Smith" />
-  <meta property="og:description" content="Journalist, author and analyst. Selected public-interest reporting and research." />
+  <meta property="og:description" content="Journalist and author. Public-interest research with a focus on conflict and international affairs." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://graemesmith.com/" />
   <style>
@@ -46,7 +46,7 @@
       outline: 2px solid currentColor;
       outline-offset: 4px;
     }
-    header nav, .links {
+    header nav {
       display: flex;
       flex-wrap: wrap;
       gap: 1rem;
@@ -62,12 +62,8 @@
       letter-spacing: -0.01em;
       margin: 0 0 1.25rem;
     }
-    .lede {
-      margin: 0 0 1.25rem;
-      font-size: clamp(1.1rem, 2.1vw, 1.25rem);
-      color: var(--muted);
-    }
-    .bio { margin: 0; }
+    .bio { margin: 0; font-size: 1.05rem; }
+    .bio + .bio { margin-top: 1.25rem; }
     .selected-work { margin-top: 3rem; }
     h2 {
       font-weight: 600;
@@ -119,10 +115,6 @@
       text-align: center;
       font-size: 0.95rem;
     }
-    .links {
-      margin-top: 3rem;
-      font-size: 1.05rem;
-    }
     footer {
       margin-top: 4rem;
       font-size: 0.925rem;
@@ -138,16 +130,16 @@
   <main class="wrap" id="top">
     <header>
       <nav aria-label="Site">
-        <a href="/" aria-current="page">Home</a>
-        <a href="#selected-work">Selected work</a>
         <a href="Graeme-Smith-CV.pdf">CV</a>
         <a href="mailto:smithg@gmail.com">Email</a>
+        <a href="https://www.linkedin.com/in/smithkabul/" rel="me">LinkedIn</a>
+        <a href="https://x.com/smithkabul" rel="me">X</a>
       </nav>
     </header>
 
     <h1>Graeme Smith</h1>
-    <p class="lede">Journalist, author and analyst, based in Rome. I work on public-interest journalism and research, with a focus on conflict and international affairs.</p>
-    <p class="bio">Previously, I was a foreign correspondent for The Globe and Mail and worked with the United Nations and International Crisis Group.</p>
+    <p class="bio">Journalist and author based in Rome. I work on public-interest research with a focus on conflict and international affairs.</p>
+    <p class="bio">Previously, I was a foreign correspondent for The Globe and Mail, a political officer for the United Nations and a senior analyst for the International Crisis Group.</p>
 
     <section class="selected-work" id="selected-work" aria-labelledby="work-heading">
       <h2 id="work-heading">Selected work</h2>
@@ -207,11 +199,6 @@
         <p class="story">I first reported from Kandahar in 2005 and kept returning as a researcher. At <a href="https://www.crisisgroup.org/who-we-are/people/graeme-smith">International Crisis Group</a>, I combined fieldwork and interviews with analysis of Afghanistan’s politics and economy. After the Taliban returned to power, our work examined how economic isolation was deepening the humanitarian crisis. I presented recommendations to a <a href="https://www.foreign.senate.gov/imo/media/doc/020922_Smith_Testimony.pdf" aria-label="Written testimony to the U.S. Senate Foreign Relations subcommittee (PDF)">U.S. Senate Foreign Relations subcommittee in 2022</a>.</p>
       </article>
     </section>
-
-    <nav class="links" aria-label="Social profiles">
-      <a href="https://www.linkedin.com/in/smithkabul/" rel="me">LinkedIn</a>
-      <a href="https://x.com/smithkabul" rel="me">X</a>
-    </nav>
 
     <footer>
       <p>© <span id="y"></span> Graeme Smith</p>
