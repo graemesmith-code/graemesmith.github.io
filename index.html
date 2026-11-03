@@ -4,21 +4,22 @@
   <meta charset="utf-8" />
   <title>Graeme Smith</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Analyst, researcher, journalist. Based in Rome." />
+  <meta name="description" content="Graeme Smith is a journalist and author based in Rome. Public-interest research with a focus on conflict and international affairs." />
   <meta property="og:title" content="Graeme Smith" />
-  <meta property="og:description" content="Analyst, researcher, journalist." />
+  <meta property="og:description" content="Journalist and author. Public-interest research with a focus on conflict and international affairs." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://graemesmith.com/" />
   <style>
     :root {
-      --bg: #FBFAF5; /* consistent beige background */
+      --bg: #FBFAF5;
       --fg: #111111;
       --muted: #555555;
       --link: #0d0d0d;
-      --link-underline: rgba(0,0,0,0.15);
-      --maxw: 58ch;
+      --line: rgba(0,0,0,0.15);
+      --link-underline: rgba(0,0,0,0.3);
+      --maxw: 48rem;
     }
-    html, body { height: 100%; }
+    html, body { min-height: 100%; }
     body {
       margin: 0;
       background: var(--bg);
@@ -30,73 +31,211 @@
     }
     .wrap {
       max-width: var(--maxw);
-      padding: 8rem 1.25rem 4rem;
+      padding: 2.5rem 1.5rem 2rem;
       margin: 0 auto;
+    }
+    a {
+      color: var(--link);
+      text-decoration: underline;
+      text-decoration-color: var(--link-underline);
+      text-underline-offset: 0.2em;
+      text-decoration-thickness: 1px;
+    }
+    a:hover { text-decoration-color: currentColor; }
+    a:focus-visible {
+      outline: 2px solid currentColor;
+      outline-offset: 4px;
     }
     header nav {
       display: flex;
-      gap: 1rem;
+      flex-wrap: wrap;
+      gap: 0.25rem 1.25rem;
       font-size: 0.95rem;
-      margin-bottom: 4rem;
+      margin-bottom: 1.5rem;
     }
-    header nav a {
-      color: var(--link);
-      text-decoration: none;
-      border-bottom: 1px solid var(--link-underline);
-      padding-bottom: 2px;
-    }
+    header nav a { display: inline-flex; align-items: center; min-height: 2.75rem; }
     h1 {
       font-weight: 600;
-      font-size: clamp(2.25rem, 4.5vw, 3.25rem);
+      font-size: clamp(2.1rem, 4.5vw, 2.75rem);
+      line-height: 1.2;
       letter-spacing: -0.01em;
+      margin: 0 0 0.75rem;
+    }
+    .bio { max-width: 68ch; margin: 0; font-size: 1.05rem; }
+    .bio + .bio { margin-top: 0.65rem; }
+    .selected-work { margin-top: 2rem; }
+    h2 {
+      font-weight: 600;
+      font-size: 1.4rem;
       margin: 0 0 1.25rem;
     }
-    p.lede {
-      margin: 0 0 2.25rem;
-      font-size: clamp(1.1rem, 2.1vw, 1.25rem);
-      color: var(--muted);
+    h3 {
+      font-weight: 600;
+      font-size: 1.2rem;
+      line-height: 1.3;
+      margin: 0;
     }
-    .links {
-      display: inline-flex;
-      flex-wrap: wrap;
-      gap: 1rem;
+    article {
+      display: grid;
+      grid-template-columns: 11rem minmax(0, 1fr);
+      grid-template-rows: min-content 1fr;
+      column-gap: 1.5rem;
+      row-gap: 0.5rem;
+      align-items: start;
+    }
+    article > h3, article > .story { grid-column: 2; }
+    article > figure, article > .photo-pair { grid-column: 1; grid-row: 1 / span 2; }
+    article + article {
+      border-top: 1px solid var(--line);
+      margin-top: 1.5rem;
+      padding-top: 1.5rem;
+    }
+    .story {
       font-size: 1.05rem;
+      margin: 0;
     }
-    .links a {
-      color: var(--link);
-      text-decoration: none;
-      border-bottom: 1px solid var(--link-underline);
-      padding-bottom: 2px;
-      transition: border-color .15s ease;
+    figure { margin: 0; }
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
     }
-    .links a:hover { border-color: currentColor; }
+    figcaption {
+      margin-top: 0.4rem;
+      color: var(--muted);
+      font-size: 0.85rem;
+      line-height: 1.4;
+    }
+    .portrait { max-width: 220px; }
+    .book-cover { max-width: 220px; }
+    .film-poster { max-width: 220px; }
+    .research-entry { display: block; }
+    .research-entry > h3 { margin-bottom: 0.85rem; }
+    .research-entry > .story { max-width: 68ch; }
+    .research-entry > .photo-pair { margin: 0 0 0.85rem; }
+    .photo-pair {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      grid-template-areas: "before after";
+      direction: ltr;
+      align-items: start;
+      gap: 1rem;
+    }
+    .photo-before { grid-area: before; }
+    .photo-after { grid-area: after; }
+    .photo-frame {
+      aspect-ratio: 16 / 9;
+      overflow: hidden;
+    }
+    .photo-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center bottom;
+    }
     footer {
-      margin-top: 4rem;
+      margin-top: 2rem;
       font-size: 0.925rem;
       color: var(--muted);
     }
-    @media (max-width: 520px) {
-      .wrap { padding-top: 5rem; }
+    @media (max-width: 640px) {
+      .wrap { padding: 1rem 1.25rem 1.5rem; }
+      header nav { margin-bottom: 1rem; }
+      .selected-work { margin-top: 1.5rem; }
+      article { display: block; }
+      article > h3 { margin-bottom: 0.75rem; }
+      article > figure, article > .photo-pair { margin-bottom: 0.85rem; }
+      .portrait, .book-cover, .film-poster { max-width: 160px; }
+      article + article { margin-top: 1.25rem; padding-top: 1.25rem; }
+    }
+    @media (max-width: 560px) {
+      .photo-pair { grid-template-columns: 1fr; grid-template-areas: "before" "after"; gap: 0.85rem; }
     }
   </style>
 </head>
 <body>
-  <main class="wrap">
+  <main class="wrap" id="top">
     <header>
       <nav aria-label="Site">
-        <a href="/" aria-current="page">Home</a>
         <a href="Graeme-Smith-CV.pdf">CV</a>
         <a href="mailto:smithg@gmail.com">Email</a>
+        <a href="https://www.linkedin.com/in/smithkabul/" rel="me">LinkedIn</a>
+        <a href="https://x.com/smithkabul" rel="me">X</a>
       </nav>
     </header>
 
     <h1>Graeme Smith</h1>
-    <p class="lede">Analyst, researcher, journalist. After decades in war zones, I’m now based in Rome. I am committed to rigorous analysis that improves the public record and informs better decisions.</p>
+    <p class="bio">Journalist and author based in Rome. I work on public-interest research with a focus on conflict and international affairs.</p>
+    <p class="bio">Previously, I was a foreign correspondent for The Globe and Mail, a political officer for the United Nations and a senior analyst for the International Crisis Group.</p>
 
-    <div class="links" aria-label="Key links">
-      <a href="https://www.linkedin.com/in/smithkabul/" rel="me">LinkedIn</a>
-      <a href="https://x.com/smithkabul" rel="me">X</a>
-    </div>
+    <section class="selected-work" id="selected-work" aria-labelledby="work-heading">
+      <h2 id="work-heading">Selected work</h2>
+
+      <article aria-labelledby="taliban-heading">
+        <h3 id="taliban-heading">Talking to the Taliban</h3>
+        <figure class="portrait">
+          <img src="images/graeme-smith-emmy-2009.jpg" width="400" height="500" alt="Graeme Smith holding the Emmy Award for Talking to the Taliban in 2009" decoding="async" />
+          <figcaption>With the Emmy, 2009.</figcaption>
+        </figure>
+        <p class="story">Using filmed interviews with 42 Taliban fighters, I explored how local and tribal disputes shaped the insurgency. The six-part Globe and Mail series let fighters explain why they fought. It won an <a href="https://www.torontomu.ca/content/dam/senate/senate-meetings/agenda/2009/20091103agenmin.pdf#page=10" aria-label="Emmy Award record (PDF)">Emmy Award in 2009</a>.</p>
+      </article>
+
+      <article aria-labelledby="book-heading">
+        <h3 id="book-heading">The Dogs Are Eating Them Now</h3>
+        <figure class="book-cover">
+          <a href="https://www.penguinrandomhouse.com/books/675215/the-dogs-are-eating-them-now-by-graeme-smith/">
+            <img src="images/the-dogs-are-eating-them-now-cover.jpg" width="778" height="1200" alt="Cover of The Dogs Are Eating Them Now: Our War in Afghanistan, by Graeme Smith" loading="lazy" decoding="async" />
+          </a>
+        </figure>
+        <p class="story">Years of reporting in southern Afghanistan shaped this account of the war. I traced how corruption, local rivalries and the drug trade undermined the international mission. The book won the <a href="https://www.writerstrust.com/authors/graeme-smith">2013 Hilary Weston Writers’ Trust Prize for Nonfiction</a>, then Canada’s richest annual prize for non-fiction.</p>
+      </article>
+
+      <article aria-labelledby="detainees-heading">
+        <h3 id="detainees-heading">Afghan detainees</h3>
+        <figure>
+          <img src="images/sarpoza-prison-2007.jpg" width="2048" height="1370" alt="Chained ankles at Sarpoza prison in 2007" loading="lazy" decoding="async" />
+          <figcaption>Sarpoza prison, 2007.</figcaption>
+        </figure>
+        <p class="story">I <a href="https://rabble.ca/general/reporting-torture-afghanistan/">interviewed prisoners in Kandahar</a> who described torture after Canadian troops transferred them to Afghan custody. Canada subsequently signed an agreement allowing closer monitoring of transferred prisoners. The Globe and Mail’s coverage shared the <a href="https://www.michenerawards.ca/the-michener-award/info/">2007 Michener Award for public-service journalism</a> with La Presse.</p>
+      </article>
+
+      <article aria-labelledby="libya-heading">
+        <h3 id="libya-heading">Libya’s paper trail</h3>
+        <figure>
+          <img src="images/graeme-smith-tripoli-2011.jpg" width="2048" height="1365" alt="Graeme Smith examining documents while reporting in Tripoli in 2011" loading="lazy" decoding="async" />
+          <figcaption>Reviewing documents from the former Gaddafi regime. Tripoli, 2011.</figcaption>
+        </figure>
+        <p class="story">In Tripoli, I found documents detailing <a href="https://www.abc.net.au/worldtoday/archive/articles/2011/09/06/s3310943.htm">offers of Chinese weapons to Gaddafi’s government</a> despite a UN arms embargo. With Greg McArthur, I also investigated SNC-Lavalin’s business in Libya for <cite>Building with the Brigadier</cite>. The feature won <a href="https://magazine-awards.com/en/2013/06/07/announcing-the-winners-of-the-36th-national-magazine-awards/">two gold National Magazine Awards and a silver in 2013</a>.</p>
+      </article>
+
+      <article aria-labelledby="ghosts-heading">
+        <h3 id="ghosts-heading">Ghosts of Afghanistan</h3>
+        <figure class="film-poster">
+          <img src="images/ghosts-of-afghanistan-poster.webp" width="2500" height="3333" alt="English-language poster for Ghosts of Afghanistan" loading="lazy" decoding="async" />
+          <figcaption>English-language film poster.</figcaption>
+        </figure>
+        <p class="story">I returned to Afghanistan for <a href="https://javafilms.fr/film/ghosts-of-afghanistan/"><cite>Ghosts of Afghanistan</cite></a>, exploring the war through interviews with officials, Taliban leaders and women. I co-wrote the film with Julian Sher and Natalie Dubois. We shared the <a href="https://tvo.me/tvo-and-tvokids-earn-major-honours-at-2022-canadian-screen-awards/">2022 Canadian Screen Award for documentary writing</a>.</p>
+      </article>
+
+      <article class="research-entry" aria-labelledby="research-heading">
+        <h3 id="research-heading">Research and Policy Analysis</h3>
+        <div class="photo-pair" role="group" aria-label="Kandahar photographs from 2005 and 2019">
+          <figure class="photo-before">
+            <div class="photo-frame">
+              <img src="images/graeme-smith-kandahar-2005.jpg" width="2048" height="1204" alt="Graeme Smith with men at a military outpost on the western outskirts of Kandahar city in 2005" loading="lazy" decoding="async" />
+            </div>
+            <figcaption>2005, at an outpost near Kandahar City</figcaption>
+          </figure>
+          <figure class="photo-after">
+            <div class="photo-frame">
+              <img src="images/graeme-smith-kandahar-2019.jpg" width="2048" height="1536" alt="Graeme Smith revisiting the same military outpost in Kandahar in 2019" loading="lazy" decoding="async" />
+            </div>
+            <figcaption>2019, a return visit to the same outpost.</figcaption>
+          </figure>
+        </div>
+        <p class="story">At <a href="https://www.crisisgroup.org/who-we-are/people/graeme-smith">International Crisis Group</a>, I combined fieldwork with analysis of Afghanistan’s politics and economy. Our research examined how economic isolation was deepening the humanitarian crisis. I presented recommendations to a <a href="https://www.foreign.senate.gov/imo/media/doc/020922_Smith_Testimony.pdf" aria-label="Written testimony to the U.S. Senate Foreign Relations subcommittee (PDF)">U.S. Senate Foreign Relations subcommittee in 2022</a>.</p>
+      </article>
+    </section>
 
     <footer>
       <p>© <span id="y"></span> Graeme Smith</p>
@@ -108,3 +247,4 @@
   </script>
 </body>
 </html>
+
