@@ -85,7 +85,7 @@
     }
     article > h3, article > .story { grid-column: 2; }
     article > figure, article > .photo-pair { grid-column: 1; grid-row: 1 / span 2; }
-    article + article {
+    .selected-work > article {
       border-top: 1px solid var(--line);
       margin-top: 1.5rem;
       padding-top: 1.5rem;
@@ -146,7 +146,7 @@
       article > h3 { margin-bottom: 0.75rem; }
       article > figure, article > .photo-pair { margin-bottom: 0.85rem; }
       .portrait, .book-cover, .film-poster { max-width: 160px; }
-      article + article { margin-top: 1.25rem; padding-top: 1.25rem; }
+      .selected-work > article { margin-top: 1.25rem; padding-top: 1.25rem; }
     }
     @media (max-width: 560px) {
       .photo-pair { grid-template-columns: 1fr; grid-template-areas: "before" "after"; gap: 0.85rem; }
@@ -175,9 +175,9 @@
         <h3 id="taliban-heading">Talking to the Taliban</h3>
         <figure class="portrait">
           <img src="images/graeme-smith-emmy-2009.jpg" width="400" height="500" alt="Graeme Smith holding the Emmy Award for Talking to the Taliban in 2009" decoding="async" />
-          <figcaption>With the Emmy, 2009.</figcaption>
+          <figcaption>With the Emmy, 2009</figcaption>
         </figure>
-        <p class="story">Using filmed interviews with 42 Taliban fighters, I explored how local and tribal disputes shaped the insurgency. The six-part Globe and Mail series let fighters explain why they fought. It won an <a href="https://www.torontomu.ca/content/dam/senate/senate-meetings/agenda/2009/20091103agenmin.pdf#page=10" aria-label="Emmy Award record (PDF)">Emmy Award in 2009</a>.</p>
+        <p class="story">Using filmed interviews with 42 Taliban fighters, I explored how local grievances and tribal disputes shaped the insurgency. The six-part multimedia series let fighters explain why they fought. It won an <a href="https://www.prnewswire.com/news-releases/the-globe-and-mail-nominated-for-emmy-award-for-online-series-inside-hamas-510481191.html">Emmy Award in 2009</a>.</p>
       </article>
 
       <article aria-labelledby="book-heading">
@@ -186,26 +186,27 @@
           <a href="https://www.penguinrandomhouse.com/books/675215/the-dogs-are-eating-them-now-by-graeme-smith/">
             <img src="images/the-dogs-are-eating-them-now-cover.jpg" width="778" height="1200" alt="Cover of The Dogs Are Eating Them Now: Our War in Afghanistan, by Graeme Smith" loading="lazy" decoding="async" />
           </a>
+          <figcaption>Cover of the paperback edition.</figcaption>
         </figure>
-        <p class="story">Years of reporting in southern Afghanistan shaped this account of the war. I traced how corruption, local rivalries and the drug trade undermined the international mission. The book won the <a href="https://www.writerstrust.com/authors/graeme-smith">2013 Hilary Weston Writers’ Trust Prize for Nonfiction</a>, then Canada’s richest annual prize for non-fiction.</p>
+        <p class="story">Several years of reporting in southern Afghanistan shaped this account of the war. I traced how corruption, the drug trade, and the missteps of local and international forces led to the Taliban’s return. The bestselling book won several prizes, including the <a href="https://www.writerstrust.com/authors/graeme-smith">2013 Hilary Weston Writers’ Trust Prize for Nonfiction</a>, then Canada’s richest annual prize for non-fiction.</p>
       </article>
 
       <article aria-labelledby="detainees-heading">
         <h3 id="detainees-heading">Afghan detainees</h3>
         <figure>
           <img src="images/sarpoza-prison-2007.jpg" width="2048" height="1370" alt="Chained ankles at Sarpoza prison in 2007" loading="lazy" decoding="async" />
-          <figcaption>Sarpoza prison, 2007.</figcaption>
+          <figcaption>Sarpoza prison, 2007</figcaption>
         </figure>
-        <p class="story">I <a href="https://rabble.ca/general/reporting-torture-afghanistan/">interviewed prisoners in Kandahar</a> who described torture after Canadian troops transferred them to Afghan custody. Canada subsequently signed an agreement allowing closer monitoring of transferred prisoners. The Globe and Mail’s coverage shared the <a href="https://www.michenerawards.ca/the-michener-award/info/">2007 Michener Award for public-service journalism</a> with La Presse.</p>
+        <p class="story">I <a href="https://rabble.ca/general/reporting-torture-afghanistan/">interviewed prisoners in Kandahar</a> who described torture after Canadian troops transferred them to Afghan custody. Canada subsequently signed an agreement allowing closer monitoring of transferred prisoners. The Globe and Mail’s coverage shared the <a href="https://www.michenerawards.ca/the-michener-award/info/">2007 Michener Award for public-service journalism</a>.</p>
       </article>
 
       <article aria-labelledby="libya-heading">
         <h3 id="libya-heading">Libya’s paper trail</h3>
         <figure>
           <img src="images/graeme-smith-tripoli-2011.jpg" width="2048" height="1365" alt="Graeme Smith examining documents while reporting in Tripoli in 2011" loading="lazy" decoding="async" />
-          <figcaption>Reviewing documents from the former Gaddafi regime. Tripoli, 2011.</figcaption>
+          <figcaption>Reviewing documents in Tripoli, 2011</figcaption>
         </figure>
-        <p class="story">In Tripoli, I found documents detailing <a href="https://www.abc.net.au/worldtoday/archive/articles/2011/09/06/s3310943.htm">offers of Chinese weapons to Gaddafi’s government</a> despite a UN arms embargo. With Greg McArthur, I also investigated SNC-Lavalin’s business in Libya for <cite>Building with the Brigadier</cite>. The feature won <a href="https://magazine-awards.com/en/2013/06/07/announcing-the-winners-of-the-36th-national-magazine-awards/">two gold National Magazine Awards and a silver in 2013</a>.</p>
+        <p class="story">In Tripoli, I found documents detailing <a href="https://www.abc.net.au/worldtoday/archive/articles/2011/09/06/s3310943.htm">offers of Chinese weapons to Gaddafi’s government</a> despite a UN arms embargo. Other documents I found in Gaddafi’s ruined palaces formed the basis of an investigation of a Canadian engineering firm, SNC-Lavalin, co-authored with Greg McArthur. The article won <a href="https://magazine-awards.com/en/2013/06/07/announcing-the-winners-of-the-36th-national-magazine-awards/">two gold National Magazine Awards and a silver in 2013</a>. Its construction subsidiary <a href="https://www.bbc.com/news/world-us-canada-50751905">pleaded guilty to fraud</a>.</p>
       </article>
 
       <article aria-labelledby="ghosts-heading">
@@ -214,7 +215,7 @@
           <img src="images/ghosts-of-afghanistan-poster.webp" width="2500" height="3333" alt="English-language poster for Ghosts of Afghanistan" loading="lazy" decoding="async" />
           <figcaption>English-language film poster.</figcaption>
         </figure>
-        <p class="story">I returned to Afghanistan for <a href="https://javafilms.fr/film/ghosts-of-afghanistan/"><cite>Ghosts of Afghanistan</cite></a>, exploring the war through interviews with officials, Taliban leaders and women. I co-wrote the film with Julian Sher and Natalie Dubois. We shared the <a href="https://tvo.me/tvo-and-tvokids-earn-major-honours-at-2022-canadian-screen-awards/">2022 Canadian Screen Award for documentary writing</a>.</p>
+        <p class="story">I returned to Afghanistan for <a href="https://javafilms.fr/film/ghosts-of-afghanistan/"><cite>Ghosts of Afghanistan</cite></a>, exploring the war through interviews with Afghans on all sides of the war, including many Afghan women. I co-wrote the film with Julian Sher and Natalie Dubois. We shared the <a href="https://tvo.me/tvo-and-tvokids-earn-major-honours-at-2022-canadian-screen-awards/">2022 Canadian Screen Award for documentary writing</a>.</p>
       </article>
 
       <article class="research-entry" aria-labelledby="research-heading">
@@ -224,16 +225,16 @@
             <div class="photo-frame">
               <img src="images/graeme-smith-kandahar-2005.jpg" width="2048" height="1204" alt="Graeme Smith with men at a military outpost on the western outskirts of Kandahar city in 2005" loading="lazy" decoding="async" />
             </div>
-            <figcaption>2005, at an outpost near Kandahar City</figcaption>
+            <figcaption>At an outpost near Kandahar City, 2005</figcaption>
           </figure>
           <figure class="photo-after">
             <div class="photo-frame">
               <img src="images/graeme-smith-kandahar-2019.jpg" width="2048" height="1536" alt="Graeme Smith revisiting the same military outpost in Kandahar in 2019" loading="lazy" decoding="async" />
             </div>
-            <figcaption>2019, a return visit to the same outpost.</figcaption>
+            <figcaption>A return visit to the same outpost, 2019</figcaption>
           </figure>
         </div>
-        <p class="story">At <a href="https://www.crisisgroup.org/who-we-are/people/graeme-smith">International Crisis Group</a>, I combined fieldwork with analysis of Afghanistan’s politics and economy. Our research examined how economic isolation was deepening the humanitarian crisis. I presented recommendations to a <a href="https://www.foreign.senate.gov/imo/media/doc/020922_Smith_Testimony.pdf" aria-label="Written testimony to the U.S. Senate Foreign Relations subcommittee (PDF)">U.S. Senate Foreign Relations subcommittee in 2022</a>.</p>
+        <p class="story">At the <a href="https://www.crisisgroup.org/who-we-are/people/graeme-smith">International Crisis Group</a>, I combined fieldwork with analysis of Afghanistan’s politics and economy. Among other things, our research examined how economic isolation was deepening the humanitarian crisis. I presented recommendations to a <a href="https://www.foreign.senate.gov/imo/media/doc/020922_Smith_Testimony.pdf" aria-label="Written testimony to the U.S. Senate Foreign Relations subcommittee (PDF)">U.S. Senate Foreign Relations subcommittee in 2022</a>, and wrote several pieces for <a href="https://www.foreignaffairs.com/authors/graeme-smith"><cite>Foreign Affairs</cite></a>.</p>
       </article>
     </section>
 
@@ -247,4 +248,5 @@
   </script>
 </body>
 </html>
+
 
