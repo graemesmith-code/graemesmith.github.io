@@ -63,7 +63,7 @@
     }
     .bio { max-width: 68ch; margin: 0; font-size: 1.05rem; }
     .bio + .bio { margin-top: 0.65rem; }
-    .selected-work { margin-top: 2rem; }
+    .selected-work, .recent-projects { margin-top: 2rem; }
     h2 {
       font-weight: 600;
       font-size: 1.4rem;
@@ -85,7 +85,7 @@
     }
     article > h3, article > .story { grid-column: 2; }
     article > figure, article > .photo-pair { grid-column: 1; grid-row: 1 / span 2; }
-    .selected-work > article {
+    .selected-work > article, .recent-projects > .story {
       border-top: 1px solid var(--line);
       margin-top: 1.5rem;
       padding-top: 1.5rem;
@@ -141,12 +141,12 @@
     @media (max-width: 640px) {
       .wrap { padding: 1rem 1.25rem 1.5rem; }
       header nav { margin-bottom: 1rem; }
-      .selected-work { margin-top: 1.5rem; }
+      .selected-work, .recent-projects { margin-top: 1.5rem; }
       article { display: block; }
       article > h3 { margin-bottom: 0.75rem; }
       article > figure, article > .photo-pair { margin-bottom: 0.85rem; }
       .portrait, .book-cover, .film-poster { max-width: 160px; }
-      .selected-work > article { margin-top: 1.25rem; padding-top: 1.25rem; }
+      .selected-work > article, .recent-projects > .story { margin-top: 1.25rem; padding-top: 1.25rem; }
     }
     @media (max-width: 560px) {
       .photo-pair { grid-template-columns: 1fr; grid-template-areas: "before" "after"; gap: 0.85rem; }
@@ -167,6 +167,11 @@
     <h1>Graeme Smith</h1>
     <p class="bio">Journalist and author based in Rome. I work on public-interest research with a focus on conflict and international affairs.</p>
     <p class="bio">Previously, I was a foreign correspondent for The Globe and Mail, a political officer for the United Nations and a senior analyst for the International Crisis Group.</p>
+
+    <section class="recent-projects" id="recent-projects" aria-labelledby="projects-heading">
+      <h2 id="projects-heading">Recent projects</h2>
+      <p class="story">I am using artificial intelligence to help with discovery of news. The first step was collecting <a href="/rabbit/">sources</a>.</p>
+    </section>
 
     <section class="selected-work" id="selected-work" aria-labelledby="work-heading">
       <h2 id="work-heading">Selected work</h2>
