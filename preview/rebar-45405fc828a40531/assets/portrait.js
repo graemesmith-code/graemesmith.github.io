@@ -5,6 +5,8 @@
   const frame = camera.querySelector('.p-camera-frame');
   const picture = frame.querySelector('svg');
   const next = document.querySelector('.p-beat-radar');
+  const shots = [...document.querySelectorAll('.p-scene-shot')];
+  const scores = document.querySelector('.p-score');
   const clamp = (n, lo, hi) => Math.max(lo, Math.min(hi, n));
   if (!CSS.supports('position', 'sticky') || !CSS.supports('height', '1svh')) return;
   let pending = 0;
@@ -15,6 +17,13 @@
     const screen = document.documentElement.clientHeight;
     const height = frame.clientHeight;
     if (!height || !screen) return;
+    for (const [i, shot] of shots.entries()) {
+      const y = shot.getBoundingClientRect().top;
+      const p = clamp((screen * .97 - y) / (screen * .88), 0, 1);
+      shot.style.setProperty('--shot-scale', (1 + (i === 0 ? .12 : .17) * p).toFixed(3));
+    }
+    const bars = clamp((screen * .94 - scores.getBoundingClientRect().top) / (screen * .34), .05, 1);
+    scores.style.setProperty('--score-fill', bars.toFixed(3));
     // Change crops while the next caption approaches, not after it arrives.
     const distance = next.getBoundingClientRect().top;
     const end = Math.max(screen * .59, camera.getBoundingClientRect().bottom + 12);
@@ -53,6 +62,8 @@
       window.removeEventListener('resize', queue);
       cancelAnimationFrame(pending);
       pending = 0;
+      for (const shot of shots) shot.style.removeProperty('--shot-scale');
+      scores.style.removeProperty('--score-fill');
     }
   }
   media.addEventListener('change', sync);

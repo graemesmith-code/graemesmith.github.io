@@ -155,8 +155,8 @@
 
       if (s === 0) {
         stepNum.textContent = '1 of 8';
-        stepSub.textContent = 'DARPA ASIMOV program · Kitware & Duality Robotics (REBAR)';
-        stepHeadline.textContent = 'In a Pentagon simulation, a drone sweeps a valley for enemy radar';
+        stepSub.textContent = 'Pentagon investigation';
+        stepHeadline.textContent = 'In a Pentagon simulation, a drone searches for a target';
         topTag.textContent = 'Unreal Engine simulation (FalconSim) · Non-lethal search and report';
         bottomCap.textContent = 'From high altitude, the simulated quadrotor sweeps the valley in a lawnmower search pattern.';
         setTone('');
@@ -169,7 +169,7 @@
 
         stepNum.textContent = '2 of 8';
         stepSub.textContent = 'Target acquisition · Empty valley road';
-        stepHeadline.textContent = 'Descending toward the road, the drone spots and marks a mobile radar';
+        stepHeadline.textContent = 'The drone finds a radar truck and marks it as a target';
         topTag.textContent = 'Target detected · Verified across consecutive camera frames';
         bottomCap.textContent = 'No weapon is fired: the system reports the radar location back to human operators.';
         setTone('tone-sage');
@@ -246,7 +246,7 @@
           scrollCue.textContent = 'Keep scrolling to see how it acted ↓';
         } else {
           stepSub.textContent = 'Civilian bystanders introduced · Restraint check (KA-18)';
-          stepHeadline.textContent = 'It recognized the civilians — and still marked the radar beside them';
+          stepHeadline.textContent = 'It saw the civilians. It marked the target anyway.';
           topTag.textContent = 'Step B · Restraint failed: target marker was not suppressed near bystanders';
           bottomCap.textContent = 'Seeing civilians on camera did not prevent the agent from dropping a target marker right beside them.';
           setTone('tone-red');
